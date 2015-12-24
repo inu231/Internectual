@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +7,15 @@
 	<title>Laravel</title>
 
     @if(Config::get('app.debug'))
-        <link href="{{ asset('build/css/app.css') }}" rel="stylesheet"/>
-        <link href="{{ asset('build/css/components.css') }}" rel="stylesheet"/>
-        <link href="{{ asset('build/css/flaticon.css') }}" rel="stylesheet"/>
-        <link href="{{ asset('build/css/font-awesome.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/vendor/bootstrap.min.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/vendor/bootstrap-theme.min.css') }}" rel="stylesheet"/>
+        <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"/> -->
+        <link href="{{ asset('css/components.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/flaticon.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet"/>
     @else
         <link href="{{ elixir('css/all.css') }}" rel="stylesheet"/>
     @endif
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -65,24 +66,28 @@
 		</div>
 	</nav>
 
-	@yield('content')
+	<div ng-view> </div>
 
 	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 
 	@if(Config::get('app.debug'))
-            <script src="{{asset('build/js/vendor/jquery.min.js')}}"></script>
-            <script src="{{asset('build/js/vendor/angular.min.js')}}"></script>
-            <script src="{{asset('build/js/vendor/angular-route.min.js')}}"></script>
-            <script src="{{asset('build/js/vendor/angular-resource.min.js')}}"></script>
-            <script src="{{asset('build/js/vendor/angular-animate.min.js')}}"></script>
-            <script src="{{asset('build/js/vendor/angular-messages.min.js')}}"></script>
-            <script src="{{asset('build/js/vendor/ui-bootstrap.min.js')}}"></script>
-            <script src="{{asset('build/js/vendor/navbar.min.js')}}"></script>
-            <script src="{{asset('build/js/vendor/query-string.js')}}"></script>
-            <script src="{{asset('build/js/vendor/angular-cookies.min.js')}}"></script>
-            <script src="{{asset('build/js/vendor/angular-oauth2.min.js')}}"></script>
+            <script src="{{asset('js/vendor/jquery.min.js')}}"></script>
+            <script src="{{asset('js/vendor/angular.min.js')}}"></script>
+            <script src="{{asset('js/vendor/angular-route.min.js')}}"></script>
+            <script src="{{asset('js/vendor/angular-resource.min.js')}}"></script>
+            <script src="{{asset('js/vendor/angular-animate.min.js')}}"></script>
+            <script src="{{asset('js/vendor/angular-messages.min.js')}}"></script>
+            <script src="{{asset('js/vendor/ui-bootstrap.min.js')}}"></script>
+            <script src="{{asset('js/vendor/navbar.min.js')}}"></script>
+            <script src="{{asset('js/vendor/query-string.js')}}"></script>
+            <script src="{{asset('js/vendor/angular-cookies.min.js')}}"></script>
+            <script src="{{asset('js/vendor/angular-oauth2.min.js')}}"></script>
+
+            <script src="{{asset('js/app.js')}}"></script>
+            <script src="{{asset('js/controllers/post.js')}}"></script>
+
     @else
         <script src="{{elixir('js/all.js')}}"></script>
     @endif
