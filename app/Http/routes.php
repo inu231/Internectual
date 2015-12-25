@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('app');
+    return view('app')->with("teste");
 });
+
+
 
 Route::get('/posts', 'PostController@index');

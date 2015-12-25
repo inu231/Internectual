@@ -74,7 +74,8 @@
 
 	@if(Config::get('app.debug'))
             <script src="{{asset('js/vendor/jquery.min.js')}}"></script>
-            <script src="{{asset('js/vendor/angular.min.js')}}"></script>
+            <!-- <script src="{{asset('js/vendor/angular.min.js')}}"></script> -->
+            <script src="{{asset('js/vendor/angular.js')}}"></script>
             <script src="{{asset('js/vendor/angular-route.min.js')}}"></script>
             <script src="{{asset('js/vendor/angular-resource.min.js')}}"></script>
             <script src="{{asset('js/vendor/angular-animate.min.js')}}"></script>
@@ -85,8 +86,9 @@
             <script src="{{asset('js/vendor/angular-cookies.min.js')}}"></script>
             <script src="{{asset('js/vendor/angular-oauth2.min.js')}}"></script>
 
-            <script src="{{asset('js/app.js')}}"></script>
-            <script src="{{asset('js/controllers/post.js')}}"></script>
+            <script src="{{asset('js/app/app.js')}}"></script>
+            <script src="{{asset('js/app/controllers/post.js')}}"></script>
+            <script src="{{asset('js/app/services/post.js')}}"></script>
 
     @else
         <script src="{{elixir('js/all.js')}}"></script>

@@ -23,9 +23,9 @@ class PostController extends Controller
         $this->post = $post;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return $this->post->all();
+        return ($this->post->all());
     }
 
     /**
